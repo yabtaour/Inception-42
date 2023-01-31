@@ -2,10 +2,10 @@ FROM debian:buster
 
 RUN apt-get update -y
 
-RUN apt-get install -y mariadb-server
+RUN apt-get install -y mariadb-server mariadb-client
 
-ENV MYSQL_DATABASE=my_database \
-    MYSQL_USER=my_user \
-    MYSQL_PASSWORD=my_password \
-    MYSQL_ROOT_PASSWORD=my_root_password
+COPY    ./test.sql .
+COPY    ./script.sh .
+RUN     chmod 777 ./script.sh
 
+CMD ./script.sh
