@@ -1,6 +1,7 @@
 #!/bin/bash
 
 service mysql start
-mysql < ./test.sql
+
+mysql -u root < ./test.sql
 
 bash
