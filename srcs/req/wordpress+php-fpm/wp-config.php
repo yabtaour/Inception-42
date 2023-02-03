@@ -18,18 +18,21 @@
  * @package WordPress
  */
 
+// user = root
+// group = root
+
 // ** Database settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define( 'DB_NAME', 'MY_DATABASE' );
+define( 'DB_NAME', 'mydb' );
 
 /** Database username */
-define( 'DB_USER', 'MY_USERNAME' );
+define( 'DB_USER', 'db_master' );
 
 /** Database password */
-define( 'DB_PASSWORD', 'MY_PASSWORD' );
+define( 'DB_PASSWORD', 'youness69' );
 
 /** Database hostname */
-define( 'DB_HOST', 'MY_HOST' );
+define( 'DB_HOST', 'mariadb' );
 
 /** Database charset to use in creating database tables. */
 define( 'DB_CHARSET', 'utf8' );
