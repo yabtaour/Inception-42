@@ -1,6 +1,7 @@
 FROM debian:buster
 
-RUN apt-get -y update && apt-get -y upgrade
+RUN		apt-get update -y
+
 RUN apt-get -y install nginx
 RUN apt-get -y install openssl
 RUN mkdir /etc/nginx/ssl
@@ -10,3 +11,5 @@ RUN openssl req -newkey rsa:4096 -x509 -sha256 -days 365 -nodes \
        -subj "/C=MR/ST=Khouribga/L=Khouribga/O=1337School/OU=1337/CN=1337/"
 COPY ./index.html /var/www/htmlhtml
 COPY ./nginx.conf /etc/nginx/
+
+CMD ["nginx", "-g", "daemon off;"]
