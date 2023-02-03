@@ -1,13 +1,13 @@
-FROM debian:buster
+FROM	debian:buster
 
-RUN apt-get update -y
+RUN		apt-get update -y
 
-RUN  apt-get install -y mariadb-server mariadb-client
+RUN		apt-get install -y mariadb-server
 
-COPY    ./test.sql .
-COPY	./script.sh .
+COPY	./test.sql .
 
+RUN		sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
 
-RUN 	chmod 777 script.sh
+RUN		service mysql start && mysql < test.sql
 
-CMD		./script.sh
+CMD mysqld
