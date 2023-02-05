@@ -2,24 +2,35 @@ version: "3.7"
 
 services:
       nginx:
+          container_name: nginx
           networks:
             - mamak
           build:  ./req/nginx/
           ports:
             - "443:443"
 
-      wordpress:
-          networks:
-            - mamak
-          build:  ./req/wordpress+php-fpm/
-          ports:
-            - "9000:9000"
-
       mariadb:
+          container_name: mariadb
           networks:
             - mamak
           build:  ./req/mariadb/
           ports:
             - "3306:3306"
+          volumes:
+            - /home/yabtaour/Desktop/volumes/wp_files:/var/lib/mysql
+
+      wordpress:
+          container_name: wordpress
+          networks:
+            - mamak
+          build:  ./req/wordpress+php-fpm/
+          ports:
+            - "9000:9000"
+          depends_on:
+            - mariadb
+          volumes:
+            - /home/yabtaour/Desktop/volumes/wp_files:/var/www/html
+
 networks:
       mamak: {}
+        
