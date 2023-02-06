@@ -6,8 +6,12 @@ services:
           networks:
             - mamak
           build:  ./req/nginx/
+          depends_on:
+            - wordpress
           ports:
             - "443:443"
+          volumes:
+            - wp_files:/var/www/html
 
       mariadb:
           container_name: mariadb
@@ -17,7 +21,7 @@ services:
           ports:
             - "3306:3306"
           volumes:
-            - /home/yabtaour/Desktop/volumes/wp_files:/var/lib/mysql
+            - wp_database:/var/lib/mysql
 
       wordpress:
           container_name: wordpress
@@ -29,8 +33,19 @@ services:
           depends_on:
             - mariadb
           volumes:
-            - /home/yabtaour/Desktop/volumes/wp_files:/var/www/html
+            - wp_files:/var/www/html
 
 networks:
       mamak: {}
-        
+
+volumes:
+      wp_database:
+        driver_opts:
+          type: none
+          device: /home/yabtaour/Desktop/volumes/wp_database
+          o: bind
+      wp_files:
+        driver_opts:
+          type: none
+          device: /home/yabtaour/Desktop/volumes/wp_files
+          o: bind       
