@@ -19,7 +19,7 @@ services:
             - mamak
           build:  ./req/mariadb/
           ports:
-            - "3306:3306"
+            - "3306"
           volumes:
             - wp_database:/var/lib/mysql
 
@@ -29,12 +29,17 @@ services:
             - mamak
           build:  ./req/wordpress+php-fpm/
           ports:
-            - "9000:9000"
+            - "9000"
           depends_on:
             - mariadb
           volumes:
             - wp_files:/var/www/html
-
+      
+      static_page:
+          container_name: static_page
+          build: ./req/static_page/
+          ports:
+            - "6969:6969"
 networks:
       mamak: {}
 

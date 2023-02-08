@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+
+<html>
+    <head>
+	<style>
+body{
+    font-size: 100%;
+    margin: 0;
+}
+
+.normal-text{
+    font-size: 300%;
+    font-family: "El Messiri";
+    color: #868587 !important;
+}
+
+.heading-text{
+    font-size: 500%;
+    font-family: "El Messiri";
+    color: black !important;
+    font-weight: bold;
+}
+
+.section{
+    width: 100%;
+    height: 80vh;
+    padding-top: 20vh;
+}
+
+.image{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/*----------------menu bar----------------------*/
+
+#menu-bar{
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    z-index: 5;
+    height: 5vh;
+    top: 0;
+    right: 0;
+    font-size: 150%;
+    padding: 1%;
+}
+
+#menu-bar .menu-item{
+    display: inline;
+}
+
+#menu-bar .menu-item a{
+    padding: 0.7% 3%;
+    text-decoration: none;
+    float: right;
+    color: #868587 !important;
+}
+
+#menu-logo{
+    display: inline;
+}
+
+#menu-logo .image{
+    width: 70px;
+    height: 70px;
+    background-image: url(small_logo.png);
+    display: inline-block;
+    padding: 0 5%;
+}
+
+#home-section{
+    background-size: contain;
+    background-image: url(Home.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-position: 0;
+}
+
+#home-title{
+    width: fit-content;
+    position: relative;
+    top: 20%;
+    left: 55%;
+}
+
+/*----------------About----------------------*/
+
+#about-title{
+    text-align: center;
+    top: 0px;
+}
+
+#about-sub-sections{
+    height: 100%;
+    padding: 0 5%;
+    position: relative;
+}
+
+.about-sub-image{
+    width: 50%;
+    height: 120%;
+    display: inline-block;
+}
+
+.about-sub-text{
+    width: 50%;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+}
+
+#about-1{
+    width: 100%;
+    height: 40%;
+    position: relative;
+    top: 0;
+}
+
+#about-2{
+    width: 100%;
+    height: 40%;
+    position: relative;
+}
+
+#about-1 .about-sub-image{
+    background-image: url(about_1.svg);
+}
+
+#about-2 .about-sub-image{
+    background-image: url(about_2.svg);
+    float: right;
+}
+
+#about-2 .about-sub-text{
+    text-align: left;
+}
+</style>
+        <title>Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=El+Messiri&display=swap">
+    </head>
+    <body>
+    
+
+        <div id="menu-bar" class="menu">
+            <div id="menu-logo">
+                <div class="image"></div>
+            </div>
+            <div id="menu-contact" class="menu-item">
+                <a href="#contact-section">Contact Us</a>
+            </div>
+            <div id="menu-about" class="menu-item">
+                <a href="#about-section">About</a>
+            </div>
+            <div id="menu-home" class="menu-item">
+                <a href="#home-section">Home</a>
+            </div>
+        </div>
+
+
+        <div class="section" id="home-section">
+            <div id="home-title">
+                <div class="normal-text">Towards</div>
+                <div class="heading-text">Excellence,</div>
+                <div class="normal-text">Providing you with the best of our serivces</div> 
+            </div>
+        </div>
+
+    
+        <div class="section" id="about-section">
+            <div id="about-title" class="heading-text">About Us</div>
+            <div id="about-sub-sections">
+                <div id="about-1">
+                    <div class="about-sub-image image"></div>
+                    <div class="about-sub-text normal-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula,
+                        sem ut sagittis scelerisque, sem sapien malesuada ipsum, et luctus neque eros a sapien.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasel 
+                    </div>
+                </div>
+                <div id="about-2">
+                    <div class="about-sub-text normal-text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam vehicula,
+                        sem ut sagittis scelerisque, sem sapien malesuada ipsum, et luctus neque eros a sapien.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasel
+                    </div>
+                    <div class="about-sub-image image"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="section" id="contact-section">
+            <div id="contact-title" class="heading-text">Contact Us</div>
+            <div id="contact-sub-sections">
+                <div id="contact-phone">
+                    <div class="image">
+
+                    </div>
+                    <p>0000000000000</p>
+                </div>
+                <div id="contact-email">
+                    <div class="image">
+
+                    </div>
+                    <p>0000000000000</p>
+                </div>
+                <div id="contact-location">
+                    <div class="image">
+
+                    </div>
+                    <p>0000000000000</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

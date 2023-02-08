@@ -1,0 +1,134 @@
+body{
+    font-size: 100%;
+    margin: 0;
+}
+
+.normal-text{
+    font-size: 300%;
+    font-family: "El Messiri";
+    color: #868587 !important;
+}
+
+.heading-text{
+    font-size: 500%;
+    font-family: "El Messiri";
+    color: black !important;
+    font-weight: bold;
+}
+
+.section{
+    width: 100%;
+    height: 80vh;
+    padding-top: 20vh;
+}
+
+.image{
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+/*----------------menu bar----------------------*/
+
+#menu-bar{
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    z-index: 5;
+    height: 5vh;
+    top: 0;
+    right: 0;
+    font-size: 150%;
+    padding: 1%;
+}
+
+#menu-bar .menu-item{
+    display: inline;
+}
+
+#menu-bar .menu-item a{
+    padding: 0.7% 3%;
+    text-decoration: none;
+    float: right;
+    color: #868587 !important;
+}
+
+#menu-logo{
+    display: inline;
+}
+
+#menu-logo .image{
+    width: 70px;
+    height: 70px;
+    background-image: url(small_logo.png);
+    display: inline-block;
+    padding: 0 5%;
+}
+
+#home-section{
+    background-size: contain;
+    background-image: url(Home.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-position: 0;
+}
+
+#home-title{
+    width: fit-content;
+    position: relative;
+    top: 20%;
+    left: 55%;
+}
+
+/*----------------About----------------------*/
+
+#about-title{
+    text-align: center;
+    top: 0px;
+}
+
+#about-sub-sections{
+    height: 100%;
+    padding: 0 5%;
+    position: relative;
+}
+
+.about-sub-image{
+    width: 50%;
+    height: 120%;
+    display: inline-block;
+}
+
+.about-sub-text{
+    width: 50%;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+}
+
+#about-1{
+    width: 100%;
+    height: 40%;
+    position: relative;
+    top: 0;
+}
+
+#about-2{
+    width: 100%;
+    height: 40%;
+    position: relative;
+}
+
+#about-1 .about-sub-image{
+    background-image: url(about_1.svg);
+}
+
+#about-2 .about-sub-image{
+    background-image: url(about_2.svg);
+    float: right;
+}
+
+#about-2 .about-sub-text{
+    text-align: left;
+}
