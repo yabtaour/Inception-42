@@ -17,6 +17,6 @@ wp core install --path=/var/www/html  --allow-root --url="https://yabtaour.42.fr
 
 wp user create youness youness@gmail.com  --user_pass=youness69 --role=author --path=/var/www/html --allow-root
 
-# wp theme install Zeever --activate --path=/var/www/html --allow-root
+#wp theme install Zeever --activate --path=/var/www/html --allow-root
 
 php-fpm7.3 --nodaemonize
