@@ -15,7 +15,7 @@ start:
 	docker-compose start
 
 down:
-	docker-compose remove
+	docker-compose down
 
 clean:
 	chmod 777 /home/yabtaour/Desktop/volumes/*
