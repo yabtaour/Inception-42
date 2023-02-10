@@ -39,7 +39,7 @@ services:
           container_name: static_page
           build: ./req/static_page/
           ports:
-            - "6969:6969"
+            - "6969:443"
 networks:
       mamak: {}
 
