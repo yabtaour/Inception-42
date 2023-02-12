@@ -8,11 +8,12 @@ services:
           build:  ./req/nginx/
           depends_on:
             - wordpress
+            - adminer
           ports:
             - "443:443"
           volumes:
             - wp_files:/var/www/html
-
+      
       mariadb:
           container_name: mariadb
           networks:
@@ -39,18 +40,27 @@ services:
           container_name: static_page
           build: ./req/static_page/
           ports:
-            - "6969:443"
+            - "8080:8080"
+
+      adminer:
+          container_name: adminer
+          networks:
+            - mamak
+          build: ./req/adminer/
+          ports:
+            - "8000:443"
+
 networks:
       mamak: {}
 
 volumes:
       wp_database:
         driver_opts:
-          type: none
-          device: /home/yabtaour/Desktop/volumes/wp_database
+          type: local
+          device: /home/yabtaour/data/wp_database/
           o: bind
       wp_files:
         driver_opts:
-          type: none
-          device: /home/yabtaour/Desktop/volumes/wp_files
-          o: bind       
+          type: local
+          device: /home/yabtaour/data/wp_files/
+          o: bind

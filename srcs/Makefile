@@ -1,25 +1,22 @@
-create:
-	mkdir /home/yabtaour/Desktop/volumes/wp_files && \
-	mkdir /home/yabtaour/Desktop/volumes/wp_database
-
 build:
 	docker-compose build
 
-up:
+up: build
 	docker-compose up
-
-stop:
-	docker-compose stop
 
 start:
 	docker-compose start
+
+all: up
+
+stop:
+	docker-compose stop
 
 down:
 	docker-compose down
 
 clean:
-	chmod 777 /home/yabtaour/Desktop/volumes/*
-	rm -rf /home/yabtaour/Desktop/volumes/*
+	sudo rm -rf /home/yabtaour/data/wp_files/* && sudo rm -rf /home/yabtaour/data/wp_database/*
 
 fclean: clean
 	docker system prune -af
