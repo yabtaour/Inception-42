@@ -50,6 +50,13 @@ services:
           ports:
             - "8000:443"
 
+      redis:
+          container_name: redis
+          networks:
+            - mamak
+          build: ./req/redis/
+          ports:
+            - "6379"
 networks:
       mamak: {}
 
