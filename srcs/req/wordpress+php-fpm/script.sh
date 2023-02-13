@@ -1,6 +1,8 @@
 #!/bin/bash
 mkdir -p /var/www/html
 
+chown -R www-data:www-data /var/www/html/
+
 chmod 777 /var/www/html
 
 mkdir -p /run/php
@@ -17,11 +19,13 @@ define('WP_REDIS_PORT', 6379);
 define('WP_REDIS_DISABLED', false);
 PHP
 
-wp plugin install redis-cache --path=/var/www/html --allow-root --activate
-
 wp core install --path=/var/www/html  --allow-root --url="https://yabtaour.42.fr" --title="inception" --admin_user="yabtaour" --admin_password="yabtaour69" --admin_email="yabtaour@student.1337.ma" --skip-email
 
 wp user create youness youness@gmail.com  --user_pass=youness69 --role=author --path=/var/www/html --allow-root
+
+wp plugin install redis-cache --path=/var/www/html --allow-root
+wp plugin activate redis-cache --path=/var/www/html --allow-root
+wp redis enable --path=/var/www/html --allow-root
 
 #wp theme install Zeever --activate --path=/var/www/html --allow-root
 
