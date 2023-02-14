@@ -57,6 +57,18 @@ services:
           build: ./req/redis/
           ports:
             - "6379"
+      ftp:
+          container_name: ftp
+          networks:
+            - mamak
+          build: ./req/ftp/
+          env_file:
+            - .env 
+          ports:
+            - "21:21"
+            - "40000-40005:40000-40005"
+          volumes:
+            - wp_files:/home/ftpuser/ftp
 networks:
       mamak: {}
 

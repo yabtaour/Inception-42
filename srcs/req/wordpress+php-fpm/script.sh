@@ -1,8 +1,9 @@
 #!/bin/bash
 mkdir -p /var/www/html
 
-chown -R www-data:www-data /var/www/html/
-
+#chown -R www-data:www-data /var/www/html/
+#groupadd www-pub
+#	usermod -aG www-pub www-data
 chmod 777 /var/www/html
 
 mkdir -p /run/php
@@ -12,7 +13,8 @@ wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 chmod +x wp-cli.phar
 mv wp-cli.phar /usr/local/bin/wp
 wp core download  --path=/var/www/html --allow-root
-
+groupadd 
+chown -R www-data:www-data /var/www/html
 wp config create --dbname=mydb --dbuser=db_master --dbpass=youness69 --dbhost=mariadb --path=/var/www/html --allow-root --skip-check --extra-php <<PHP
 define('WP_REDIS_HOST', 'redis');
 define('WP_REDIS_PORT', 6379);
