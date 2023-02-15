@@ -1,13 +1,10 @@
-build:
+up:
 	docker-compose up --build
 
-up:
-	docker-compose up
+all: up
 
 start:
 	docker-compose start
-
-all: up
 
 stop:
 	docker-compose stop
