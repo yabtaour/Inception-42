@@ -69,6 +69,18 @@ services:
             - "40000-40005:40000-40005"
           volumes:
             - wp_files:/home/ftpuser/ftp
+
+      cadvisor:
+          container_name: cadvisor
+          networks:
+            - mamak
+          build: ./req/cadvisor
+          ports:
+            - "8888:8888"
+          volumes:
+            - /var/run/docker.sock:/var/run/docker.sock:ro
+            - /etc/machine-id:/etc/machine-id:ro
+            - /var/lib/dbus/machine-id:/var/lib/dbus/machine-id:ro
 networks:
       mamak: {}
 

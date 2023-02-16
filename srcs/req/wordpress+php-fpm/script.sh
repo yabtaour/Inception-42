@@ -21,7 +21,7 @@ define('WP_REDIS_PORT', 6379);
 define('WP_REDIS_DISABLED', false);
 PHP
 
-chown -R www-pub /var/www/html
+chown -R :www-pub /var/www/html
 
 wp core install --path=/var/www/html  --allow-root --url="https://yabtaour.42.fr" --title="inception" --admin_user="yabtaour" --admin_password="yabtaour69" --admin_email="yabtaour@student.1337.ma" --skip-email
 

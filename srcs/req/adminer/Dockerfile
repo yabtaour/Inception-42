@@ -27,8 +27,8 @@ WORKDIR /var/www/html
 
 COPY ./script.sh .
 
-RUN wget https://www.adminer.org/static/download/4.8.1/adminer-4.8.1.php
-
 RUN chmod 777 ./script.sh
+
+RUN wget https://www.adminer.org/static/download/4.8.1/adminer-4.8.1.php
 
 ENTRYPOINT ./script.sh
