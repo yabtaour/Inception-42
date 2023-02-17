@@ -29,6 +29,8 @@ services:
           networks:
             - mamak
           build:  ./req/wordpress+php-fpm/
+          env_file:
+            - .env
           ports:
             - "9000"
           depends_on:
@@ -88,7 +90,7 @@ volumes:
       wp_database:
         driver_opts:
           type: local
-          device: /home/yabtaour/data/wp_database/
+          device: /home/yabtaour/data/database/
           o: bind
       wp_files:
         driver_opts:

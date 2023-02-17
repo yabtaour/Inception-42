@@ -15,7 +15,7 @@ chmod +x wp-cli.phar
 mv wp-cli.phar /usr/local/bin/wp
 wp core download  --path=/var/www/html --allow-root
 #groupadd 
-wp config create --dbname=mydb --dbuser=db_master --dbpass=youness69 --dbhost=mariadb --path=/var/www/html --allow-root --skip-check --extra-php <<PHP
+wp config create --dbname=$DB_NAME --dbuser=$DB_USER --dbpass=$DB_PASSWORD --dbhost=$DB_HOST --path=/var/www/html --allow-root --skip-check --extra-php <<PHP
 define('WP_REDIS_HOST', 'redis');
 define('WP_REDIS_PORT', 6379);
 define('WP_REDIS_DISABLED', false);
@@ -23,14 +23,14 @@ PHP
 
 chown -R :www-pub /var/www/html
 
-wp core install --path=/var/www/html  --allow-root --url="https://yabtaour.42.fr" --title="inception" --admin_user="yabtaour" --admin_password="yabtaour69" --admin_email="yabtaour@student.1337.ma" --skip-email
+wp core install --path=/var/www/html  --allow-root --url=$WP_URL --title=$WP_TITLE --admin_user=$WP_ADMIN --admin_password=$WP_PASSWORD --admin_email=$WP_ADMIN_EMAIL  --skip-email
 
-wp user create youness youness@gmail.com  --user_pass=youness69 --role=author --path=/var/www/html --allow-root
+wp user create $WP_USER $WP_USER_EMAIL  --user_pass=$WP_USER_PASSWORD --role=author --path=/var/www/html --allow-root
 
 wp plugin install redis-cache --path=/var/www/html --allow-root
 wp plugin activate redis-cache --path=/var/www/html --allow-root
 wp redis enable --path=/var/www/html --allow-root
 
-#wp theme install Zeever --activate --path=/var/www/html --allow-root
+#wp theme install zeever --activate --path=/var/www/html --allow-root
 
 php-fpm7.3 --nodaemonize
