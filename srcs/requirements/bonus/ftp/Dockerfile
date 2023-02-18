@@ -4,7 +4,8 @@ RUN apt-get update
 
 RUN apt-get install vsftpd -y
 
-COPY ./script.sh .
+COPY ./tools/script.sh .
+
 RUN chmod 777 ./script.sh
 
 #RUN service vsftpd start && \

@@ -4,11 +4,7 @@ RUN	apt-get update -y
 
 RUN	apt-get install -y mariadb-server
 
-#COPY	./script.sh .
-
-#RUN	chmod 777 ./script.sh
-
-COPY	./db.sql .
+COPY	./conf/db.sql .
 
 RUN	sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mysql/mariadb.conf.d/50-server.cnf
 

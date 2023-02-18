@@ -5,7 +5,7 @@ services:
           container_name: nginx
           networks:
             - mamak
-          build:  ./req/nginx/
+          build:  ./requirements/nginx/
           depends_on:
             - wordpress
             - adminer
@@ -18,7 +18,7 @@ services:
           container_name: mariadb
           networks:
             - mamak
-          build:  ./req/mariadb/
+          build:  ./requirements/mariadb/
           ports:
             - "3306"
           volumes:
@@ -28,9 +28,9 @@ services:
           container_name: wordpress
           networks:
             - mamak
-          build:  ./req/wordpress+php-fpm/
+          build:  ./requirements/wordpress+php-fpm/
           env_file:
-            - .env
+            - ../.env
           ports:
             - "9000"
           depends_on:
@@ -40,7 +40,7 @@ services:
       
       static_page:
           container_name: static_page
-          build: ./req/static_page/
+          build: ./requirements/bonus/static_page/
           ports:
             - "8080:8080"
 
@@ -48,7 +48,7 @@ services:
           container_name: adminer
           networks:
             - mamak
-          build: ./req/adminer/
+          build: ./requirements/bonus/adminer/
           ports:
             - "8000:443"
 
@@ -56,16 +56,16 @@ services:
           container_name: redis
           networks:
             - mamak
-          build: ./req/redis/
+          build: ./requirements/bonus/redis/
           ports:
             - "6379"
       ftp:
           container_name: ftp
           networks:
             - mamak
-          build: ./req/ftp/
+          build: ./requirements/bonus/ftp/
           env_file:
-            - .env 
+            - ../.env 
           ports:
             - "21:21"
             - "40000-40005:40000-40005"
@@ -76,7 +76,7 @@ services:
           container_name: cadvisor
           networks:
             - mamak
-          build: ./req/cadvisor
+          build: ./requirements/bonus/cadvisor
           ports:
             - "8888:8888"
           volumes:

@@ -6,11 +6,9 @@ RUN	apt-get	update && apt-get install -y \
    	php7.3-fpm \ 
     	php-mysql
 
-#COPY ./www.conf /etc/php/7.3/fpm/pool.d/www.conf
-
 RUN sed -i 's/listen = \/run\/php\/php7.3-fpm.sock/listen = 9000/g' /etc/php/7.3/fpm/pool.d/www.conf
 
-COPY ./script.sh .
+COPY ./tools/script.sh .
 
 RUN chmod 777 ./script.sh
 
