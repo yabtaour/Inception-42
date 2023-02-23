@@ -4,7 +4,7 @@ services:
       nginx:
           container_name: nginx
           networks:
-            - mamak
+            - intra
           build:  ./requirements/nginx/
           depends_on:
             - wordpress
@@ -17,9 +17,9 @@ services:
       mariadb:
           container_name: mariadb
           networks:
-            - mamak
+            - intra
           build:  ./requirements/mariadb/
-          ports:
+          expose:
             - "3306"
           volumes:
             - wp_database:/var/lib/mysql
@@ -27,11 +27,11 @@ services:
       wordpress:
           container_name: wordpress
           networks:
-            - mamak
+            - intra
           build:  ./requirements/wordpress+php-fpm/
           env_file:
             - ../.env
-          ports:
+          expose:
             - "9000"
           depends_on:
             - mariadb
@@ -47,7 +47,7 @@ services:
       adminer:
           container_name: adminer
           networks:
-            - mamak
+            - intra
           build: ./requirements/bonus/adminer/
           ports:
             - "8000:443"
@@ -55,14 +55,14 @@ services:
       redis:
           container_name: redis
           networks:
-            - mamak
+            - intra
           build: ./requirements/bonus/redis/
-          ports:
+          expose:
             - "6379"
       ftp:
           container_name: ftp
           networks:
-            - mamak
+            - intra
           build: ./requirements/bonus/ftp/
           env_file:
             - ../.env 
@@ -75,7 +75,7 @@ services:
       cadvisor:
           container_name: cadvisor
           networks:
-            - mamak
+            - intra
           build: ./requirements/bonus/cadvisor
           ports:
             - "8888:8888"
@@ -84,7 +84,7 @@ services:
             - /etc/machine-id:/etc/machine-id:ro
             - /var/lib/dbus/machine-id:/var/lib/dbus/machine-id:ro
 networks:
-      mamak: {}
+      intra: {}
 
 volumes:
       wp_database:
