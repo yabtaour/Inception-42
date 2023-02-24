@@ -6,21 +6,25 @@ services:
           networks:
             - intra
           build:  ./requirements/nginx/
+          image: nginx:incep
           depends_on:
             - wordpress
             - adminer
           ports:
             - "443:443"
+          restart: on-failure
           volumes:
             - wp_files:/var/www/html
-      
+
       mariadb:
           container_name: mariadb
           networks:
             - intra
           build:  ./requirements/mariadb/
+          image: mariadb:incep
           expose:
             - "3306"
+          restart: on-failure
           volumes:
             - wp_database:/var/lib/mysql
 
@@ -29,46 +33,56 @@ services:
           networks:
             - intra
           build:  ./requirements/wordpress+php-fpm/
+          image: wordpress:incep
           env_file:
             - ../.env
           expose:
             - "9000"
+          restart: on-failure
           depends_on:
             - mariadb
           volumes:
             - wp_files:/var/www/html
-      
+
       static_page:
           container_name: static_page
           build: ./requirements/bonus/static_page/
+          image: static_page:incep
           ports:
             - "8080:8080"
+          restart: on-failure
 
       adminer:
           container_name: adminer
           networks:
             - intra
           build: ./requirements/bonus/adminer/
+          image: adminer:incep
           ports:
             - "8000:443"
+          restart: on-failure
 
       redis:
           container_name: redis
           networks:
             - intra
           build: ./requirements/bonus/redis/
+          image: redis:incep
           expose:
             - "6379"
+          restart: on-failure
       ftp:
           container_name: ftp
           networks:
             - intra
           build: ./requirements/bonus/ftp/
+          image: ftp:incep
           env_file:
-            - ../.env 
+            - ../.env
           ports:
             - "21:21"
             - "40000-40005:40000-40005"
+          restart: on-failure
           volumes:
             - wp_files:/home/ftpuser/ftp
 
@@ -77,8 +91,10 @@ services:
           networks:
             - intra
           build: ./requirements/bonus/cadvisor
+          image: cadvisor:incep
           ports:
             - "8888:8888"
+          restart: on-failure
           volumes:
             - /var/run/docker.sock:/var/run/docker.sock:ro
             - /etc/machine-id:/etc/machine-id:ro
