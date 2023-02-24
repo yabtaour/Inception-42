@@ -2,7 +2,6 @@ up:
 	../.mariadb.sh
 	mv ../.env .
 	docker-compose -f srcs/docker-compose.yml up --build 
-	#srcs/docker-compose up --build
 
 all: up
 
@@ -14,6 +13,7 @@ stop:
 
 down:
 	docker-compose -f srcs/docker-compose.yml down
+	mv .env ..
 
 clean:
 	rm -rf Inception-42/srcs/requirements/mariadb/conf/db.sql

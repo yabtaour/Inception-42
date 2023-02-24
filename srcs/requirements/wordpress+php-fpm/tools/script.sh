@@ -32,6 +32,6 @@ wp redis enable --path=/var/www/html --allow-root
 
 service php7.3-fpm stop
 
-#wp theme install zeever --activate --path=/var/www/html --allow-root
+wp theme install zeever --activate --path=/var/www/html --allow-root
 
 php-fpm7.3 --nodaemonize
