@@ -4,17 +4,21 @@ This project uses Docker containers to create an infrastructure for WordPress. T
 ![containers.png](ReadMe/containers.png)
 
 ## Containers Technology
-Container technology allows you to run applications in a lightweight and isolated environment. Each container shares the same kernel as the host system, but has its own isolated filesystem, network stack, and process space. This is achieved through the use of several underlying technologies, including namespaces, cgroups.
+Containers technology allows you to run applications in a lightweight and isolated environment. Each container shares the same kernel as the host system, but has its own isolated filesystem, network stack, and process space. This is achieved through the use of several underlying technologies, including namespaces, cgroups.
 
 ## Namespaces
 Namespaces provide a way to isolate resources within a container. Docker uses several different namespaces to achieve this isolation, including:
 
-pid: This isolates the process ID number space. Each container has its own process ID space. net: This isolates the network stack. Each container has its own network stack, including its own IP address. ipc: This isolates inter-process communication resources. Each container has its own IPC namespace. mnt: This isolates the filesystem mount points. Each container has its own filesystem namespace. uts: This isolates the hostname and domain name.
+pid: This isolates the process ID number space. Each container has its own process ID space.
+net: This isolates the network stack. Each container has its own network stack, including its own IP address.
+ipc: This isolates inter-process communication resources. Each container has its own IPC namespace.
+mnt: This isolates the filesystem mount points. Each container has its own filesystem namespace.
+uts: This isolates the hostname and domain name.
 
 ## Cgroups
 Cgroups provide a way to limit the resources that containers can consume. Docker uses cgroups to control the amount of CPU, memory, and block device I/O that each container can use.
 
-Docker's Filesystem
+## Docker's Filesystem
 Docker's filesystem provides a layered approach to building containers. Each layer represents a change to the filesystem, and each layer is stored as a separate entity. This allows Docker to optimize the build process by only rebuilding layers that have changed, rather than rebuilding the entire filesystem for each build.
 
 ![layers.png](ReadMe/layers.png)
