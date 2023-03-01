@@ -1,5 +1,4 @@
 up:
-	../.mariadb.sh
 	mv ../.env .
 	docker-compose -f srcs/docker-compose.yml up --build 
 
