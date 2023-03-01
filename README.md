@@ -7,14 +7,14 @@ This project uses Docker containers to create an infrastructure for WordPress. T
 Containers technology allows you to run applications in a lightweight and isolated environment. Each container shares the same kernel as the host system, but has its own isolated filesystem, network stack, and process space. This is achieved through the use of several underlying technologies, including namespaces, cgroups.
 
 ## Namespaces
-Namespaces provide a way to isolate resources within a container. Docker uses several different namespaces to achieve this isolation, including:
-
-pid: This isolates the process ID number space. Each container has its own process ID space.
-net: This isolates the network stack. Each container has its own network stack, including its own IP address.
-ipc: This isolates inter-process communication resources. Each container has its own IPC namespace.
-mnt: This isolates the filesystem mount points. Each container has its own filesystem namespace.
-uts: This isolates the hostname and domain name.
-
+Namespaces provide a way to isolate resources within a container. Docker uses several different namespaces to achieve this isolation, including:<br>
+<br>
+pid: This isolates the process ID number space. Each container has its own process ID space.<br>
+net: This isolates the network stack. Each container has its own network stack, including its own IP address.<br>
+ipc: This isolates inter-process communication resources. Each container has its own IPC namespace.<br>
+mnt: This isolates the filesystem mount points. Each container has its own filesystem namespace.<br>
+uts: This isolates the hostname and domain name.<br>
+<br>
 ## Cgroups
 Cgroups provide a way to limit the resources that containers can consume. Docker uses cgroups to control the amount of CPU, memory, and block device I/O that each container can use.
 
