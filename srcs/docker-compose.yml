@@ -44,14 +44,6 @@ services:
           volumes:
             - wp_files:/var/www/html
 
-      static_page:
-          container_name: static_page
-          build: ./requirements/bonus/static_page/
-          image: static_page:incep
-          ports:
-            - "8080:8080"
-          restart: on-failure
-
       adminer:
           container_name: adminer
           networks:

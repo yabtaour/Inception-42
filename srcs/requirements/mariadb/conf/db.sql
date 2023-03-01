@@ -1,0 +1,5 @@
+CREATE DATABASE IF NOT EXISTS mydb;
+CREATE USER 'db_master' IDENTIFIED BY 'db_master69';
+GRANT ALL PRIVILEGES ON mydb.* TO 'db_master';
+ALTER USER 'root'@'localhost' IDENTIFIED BY 'root69';
+FLUSH PRIVILEGES
