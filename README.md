@@ -80,3 +80,4 @@ This was just an overview of the project and containers technology, if you want 
 - https://www.youtube.com/watch?v=el7768BNUPw&ab_channel=SeanWingert
 - https://daveiscoding.com/why-do-you-need-an-init-process-inside-your-docker-container-pid-1
 - https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504
+- http://docker-saigon.github.io/post/Docker-Internals/
