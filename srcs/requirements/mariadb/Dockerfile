@@ -1,8 +1,6 @@
 FROM	debian:buster
 
-RUN	apt-get update -y
-
-RUN	apt-get install -y mariadb-server
+RUN	apt-get update -y && apt-get install -y mariadb-server
 
 COPY	./conf/db.sql .
 

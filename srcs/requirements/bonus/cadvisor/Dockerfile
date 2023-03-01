@@ -1,10 +1,6 @@
 FROM debian:buster
 
-RUN apt-get update
-
-RUN apt-get install -y wget
-
-#RUN mkdir -p /usr/bin/cadvisor
+RUN apt-get update && apt-get install -y wget
 
 WORKDIR /usr/bin
 
