@@ -69,3 +69,12 @@ Adminer is a web-based database management tool that can be used to manage MySQL
 
 ### CAdvisor:
 CAdvisor is a tool that is used to monitor Docker containers. In my project, CAdvisor is used to monitor the resource usage of the containers.
+
+This was just an overview of the project and containers technology, if you want to make a deep dive into it this is a list of resources that would help you to get started:
+- https://www.freecodecamp.org/news/the-docker-handbook/#introduction-to-containerization-and-docker
+- https://cloud.google.com/architecture/best-practices-for-building-containers#signal-handling
+- https://martinheinz.dev/blog/44
+- https://www.youtube.com/watch?v=sK5i-N34im8&ab_channel=Docker
+- https://www.youtube.com/watch?v=el7768BNUPw&ab_channel=SeanWingert
+- https://daveiscoding.com/why-do-you-need-an-init-process-inside-your-docker-container-pid-1
+- https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504
